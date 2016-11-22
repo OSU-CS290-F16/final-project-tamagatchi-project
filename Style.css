@@ -1,1 +1,69 @@
 /* CSS code here */
+.head {
+  text-align: center;
+  color: white; 
+}
+
+h1 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+ 
+  font-weight: 400;
+  font-style: normal;
+}
+
+.navbar-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 20px;
+}
+
+.navbar-item {
+  display: inline;
+}
+
+.navbar-item a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar-item a:hover {
+  background-color: #444;
+}
+
+.navbar-right {
+  float: right;
+}
+
+nav {
+  background-color: #333;
+  color: white;
+  margin: 0 -20px; 
+  font-size: 28px;
+  font-weight: 200;
+}
+
+header {
+  padding: 5px 20px 0 5px;
+  background-color: green;
+
+}
+
+footer {
+  background-color: #333;
+  color: white;
+}
+
+footer .copyright {
+  height: 30px;
+  line-height: 30px;
+  text-align: right;
+  padding-right: 25px;
+  font-weight: 200;
+}
+
+.shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
