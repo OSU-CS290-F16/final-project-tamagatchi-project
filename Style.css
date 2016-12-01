@@ -69,3 +69,19 @@ footer .copyright {
   padding-right: 25px;
   font-weight: 200;
 }
+
+.shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background {
+  background-color: lightblue;
+}
+
+.shell_image {
+  border-style: ridge;
+  border-width: thick;
+  border-radius: 10px;
+}
