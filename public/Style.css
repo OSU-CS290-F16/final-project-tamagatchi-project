@@ -72,16 +72,16 @@ footer .copyright {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .background {
   background-color: lightblue;
 }
 
-.shell_image {
-  border-style: ridge;
-  border-width: thick;
-  border-radius: 10px;
+.shell-image { 
+  height: 50%;
+  width: 50%;
 }
 
 .about {
@@ -98,4 +98,26 @@ footer .copyright {
 #manual {
   padding-top: 2%;
   font-size: large;
+}
+
+.btn-group {
+  float: left;
+  position: absolute;
+  top: 30%;
+  left: 43%;
+}
+
+.btn {
+  float: left;
+  background-color: red;
+  cursor: pointer;
+  opacity: 0.8;
+  border: 1px solid black;
+  width: 35px;
+  height: 47px;
+  margin-left: 5px;
+}
+
+.btn:hover {
+  background-color: green;
 }
