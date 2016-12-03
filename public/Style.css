@@ -78,7 +78,7 @@ footer .copyright {
   background-color: lightblue;
 }
 
-.shell-image { 
+.shell-image {
   height: 50%;
   width: 50%;
 }
@@ -126,4 +126,8 @@ footer .copyright {
 
 .btn:hover {
   background-color: green;
+}
+
+.hidden {
+  display: none;
 }
