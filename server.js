@@ -25,7 +25,7 @@ function onRequest(request, response){
         }
         else if (!err) {
             var index = request.url.lastIndexOf('.');
-            var indexType = index == -1 ? 'text/plain' : {'.html' : 'text/html', '.css' : 'text/css', '.js' : 'text/javascript', '.gif' : 'image/gif'
+            var indexType = index == -1 ? 'text/plain' : {'.html' : 'text/html', '.css' : 'text/css', '.js' : 'text/javascript', '.gif' : 'image/gif', '.png' : 'image/png'
             }[ request.url.substr(index) ];
             response.setHeader('Content-type' , indexType);
             response.end(data);
