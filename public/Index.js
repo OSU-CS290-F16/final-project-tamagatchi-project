@@ -1,1 +1,4 @@
-// JavaScript Code Here
+function startGame(imgName) {
+    image = document.getElementById('shell');
+    image.src = imgName;
+}
