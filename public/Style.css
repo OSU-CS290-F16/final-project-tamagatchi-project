@@ -106,6 +106,13 @@ footer .copyright {
   padding-left: 2%;
 }
 
+.btn-group-2 {
+  opacity: 0.8;
+  position: absolute;
+  bottom: 25%;
+  padding-left: 2%;
+}
+
 .btn {
   float: left;
   background-color: red;
