@@ -7,16 +7,28 @@ var name = "Deutch";
 var training = 0;
 var dir = '';
 var action = "Normal";
-
-
-
 //var Gender;
 document.getElementById("caseShell").addEventListener("click", screenClick);
-document.getElementById("stats").addEventListener("click", status);
+document.getElementById("stats").addEventListener("click", statsFunc);
+document.getElementById("eat").addEventListener("click", eatFunc);
+document.getElementById("poo").addEventListener("click", pooFunc);
+document.getElementById("play").addEventListener("click", playFunc);
+document.getElementById("connected").addEventListener("click", connectFunc);
+document.getElementById("good").addEventListener("click", goodFunc);
+document.getElementById("sick").addEventListener("click", sickFunc);
+document.getElementById("sleep").addEventListener("click", sleepFunc);
+document.getElementById("bed").addEventListener("click", badFunc);
+document.getElementById("attention").addEventListener("click", attentionFunc);
+
+
+function back(){
+  dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-" + action + ".gif";
+  image.src = dir;
+}
 
 
  function screenClick() {
-   console.log("It worked");
+
      image = document.getElementById('caseShell');
 
      if(intro === true){
@@ -29,24 +41,59 @@ document.getElementById("stats").addEventListener("click", status);
 
      }
      else{
-        dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-" + action + ".gif";
-        image.src = dir;
+        back();
      }
 
 };
 
-  function status(){
+
+
+  function statsFunc(){
 
     image.src = "./Settings/Stats.png";
+    image.addEventListener("click", function(){
+      image.src = "./Settings/Training.png";
+      document.getElementById("caseShell").addEventListener("click", function(){
+        image.src = "./Settings/Age-Weight-Name.png";
+        document.getElementById("caseShell").addEventListener("click", back);
+      });
+    });
   }
 
-//function eventListen() {
-//  console.log("It worked");
-//  document.getElementById("shell").click();
-  // window.addEventListener('DOMContentLoaded', function (event) {
-  //
-  //   var screenClick = document.getElementById('shell');
-  //   screenClick.addEventListener('click', screenClick);
-  //
-  // });
-//};
+
+
+  function eatFunc(){
+
+  }
+
+  function pooFunc(){
+
+  }
+
+  function playFunc(){
+
+  }
+
+  function connectFunc(){
+
+  }
+
+  function goodFunc(){
+
+  }
+
+  function sickFunc(){
+
+  }
+
+  function sleepFunc(){
+
+  }
+
+  function badFunc(){
+
+  }
+
+  function attentionFunc(){
+
+  }
