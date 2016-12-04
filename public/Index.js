@@ -19,7 +19,7 @@ document.getElementById("connected").addEventListener("click", connectFunc);
 document.getElementById("good").addEventListener("click", goodFunc);
 document.getElementById("sick").addEventListener("click", sickFunc);
 document.getElementById("sleep").addEventListener("click", sleepFunc);
-document.getElementById("bed").addEventListener("click", badFunc);
+document.getElementById("bad").addEventListener("click", badFunc);
 document.getElementById("attention").addEventListener("click", attentionFunc);
 
 
