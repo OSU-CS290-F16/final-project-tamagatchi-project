@@ -26,6 +26,15 @@ function back(){
   image.src = dir;
 }
 
+function hideButtons(){
+  document.getElementById('buttons0').classList.add('hidden');
+  document.getElementById('buttons1').classList.add('hidden');
+}
+function showButtons(){
+  document.getElementById('buttons0').classList.remove('hidden');
+  document.getElementById('buttons1').classList.remove('hidden');
+}
+
 
  function screenClick() {
 
@@ -33,11 +42,14 @@ function back(){
 
      if(intro === true){
        intro = false;
+       hideButtons();
        image.src = "./Characters/Deutch/Age-0/Deutch-Egg.gif";
 
        setTimeout(function(){
          image.src = "./Characters/Deutch/Age-1/Deutch-Age-1-Normal.gif";
+         showButtons();
        }, 6000);
+
 
      }
      else{
@@ -49,13 +61,20 @@ function back(){
 
 
   function statsFunc(){
-
+    hideButtons();
     image.src = "./Settings/Stats.png";
     image.addEventListener("click", function(){
+      hideButtons();
       image.src = "./Settings/Training.png";
-      document.getElementById("caseShell").addEventListener("click", function(){
+      image.addEventListener("click", function(){
+        hideButtons();
         image.src = "./Settings/Age-Weight-Name.png";
-        document.getElementById("caseShell").addEventListener("click", back);
+        image.addEventListener("click", function(){
+          hideButtons();
+          dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-" + action + ".gif";
+          image.src = dir;
+          showButtons();
+        });
       });
     });
   }
@@ -63,11 +82,23 @@ function back(){
 
 
   function eatFunc(){
+    dir0 = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Eating.gif";
+    image.src = dir0;
+    setTimeout(function(){
+      back();
+    }, 3500);
 
+    if(hunger < 5) {
+      hunger = hunger + 1;
+    }
   }
 
   function pooFunc(){
-
+    dir0 = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Poo.gif";
+    image.src = dir0;
+    setTimeout(function(){
+      back();
+    }, 3500);
   }
 
   function playFunc(){

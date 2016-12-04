@@ -113,6 +113,8 @@ footer .copyright {
   padding-left: 2%;
 }
 
+
+
 .btn {
   float: left;
   background-color: red;
@@ -128,6 +130,6 @@ footer .copyright {
   background-color: green;
 }
 
-.hidden {
-  display: none;
+.hidden{
+    display: none;
 }
