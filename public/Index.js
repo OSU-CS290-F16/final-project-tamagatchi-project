@@ -1,8 +1,8 @@
 var intro = true;
 var sick = false;
 var age = 0;
-var hunger = 0;
-var happy =0;
+var hunger = 1;
+var happy = 1;
 var weight = 0;
 var poo = 0;
 var name = "Deutch";
@@ -37,6 +37,49 @@ function showButtons(){
   document.getElementById('buttons1').classList.remove('hidden');
 }
 
+function hideHearts1() {
+  document.getElementById('hearts-1').classList.add('hidden');
+}
+
+function showHearts1() {
+  image2 = document.getElementById('hearts-1');
+  
+  if (hunger == 1) {
+    image2.src = "./Settings/Hearts-1.png";
+  }
+  else if (hunger == 2) {
+    image2.src = "./Settings/Hearts-2.png";
+  }
+  else if (hunger == 3) {
+    image2.src = "./Settings/Hearts-3.png";
+  }
+  else {
+    image2.src = "./Settings/Hearts-4.png";
+  }
+  document.getElementById('hearts-1').classList.remove('hidden');
+}
+
+function hideHearts2() {
+  document.getElementById('hearts-2').classList.add('hidden');
+}
+
+function showHearts2() {
+  image3 = document.getElementById('hearts-2');
+  
+  if (happy == 1) {
+    image3.src = "./Settings/Hearts-1.png";
+  }
+  else if (happy == 2) {
+    image3.src = "./Settings/Hearts-2.png";
+  }
+  else if (happy == 3) {
+    image3.src = "./Settings/Hearts-3.png";
+  }
+  else {
+    image3.src = "./Settings/Hearts-4.png";
+  }
+  document.getElementById('hearts-2').classList.remove('hidden');
+}
 
  function screenClick() {
 
@@ -63,10 +106,15 @@ function showButtons(){
   function statsFunc(){
     hideButtons();
     image.src = "./Settings/Stats.png";
+    showHearts1();
+    showHearts2();
     //unhide hearts in hunger and happy places accordingly
     image.addEventListener("click", function(){
       hideButtons();
-      image.src = "./Settings/Training.png";
+      hideHearts1();
+      hideHearts2();
+      dir = "./Settings/Training-" + training + ".png";
+      image.src = dir;
       //hide hunger and happy hearts
       // unhide boxes according to training
       image.addEventListener("click", function(){
@@ -95,8 +143,8 @@ function showButtons(){
 
 
   function eatFunc(){
-    dir0 = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Eating.gif";
-    image.src = dir0;
+    dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Eating.gif";
+    image.src = dir;
     setTimeout(function(){
       back();
     }, 3500);
@@ -110,8 +158,8 @@ function showButtons(){
   }
 
   function pooFunc(){
-    dir0 = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Poo.gif";
-    image.src = dir0;
+    dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Poo.gif";
+    image.src = dir;
     setTimeout(function(){
       back();
     }, 3500);
@@ -124,8 +172,8 @@ function showButtons(){
   }
 
   function playFunc(){
-    dir0 = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Playing.gif";
-    image.src = dir0;
+    dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Playing.gif";
+    image.src = dir;
     setTimeout(function(){
       back();
     }, 4500);
@@ -136,8 +184,8 @@ function showButtons(){
   }
 
   function goodFunc(){
-    dir0 = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Happy.gif";
-    image.src = dir0;
+    dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Happy.gif";
+    image.src = dir;
     setTimeout(function(){
       back();
     }, 3500);
@@ -145,8 +193,8 @@ function showButtons(){
   }
 
   function sickFunc(){
-    dir0 = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Happy.gif";
-    image.src = dir0;
+    dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Happy.gif";
+    image.src = dir;
     setTimeout(function(){
       back();
     }, 3500);
@@ -154,8 +202,8 @@ function showButtons(){
   }
 
   function sleepFunc(){
-    dir0 = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Sleep.gif";
-    image.src = dir0;
+    dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Sleep.gif";
+    image.src = dir;
     setTimeout(function(){
       back();
     }, 3500);
@@ -165,8 +213,8 @@ function showButtons(){
   }
 
   function badFunc(){
-    dir0 = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Bad.gif";
-    image.src = dir0;
+    dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Bad.gif";
+    image.src = dir;
     setTimeout(function(){
       back();
     }, 3500);
