@@ -180,8 +180,8 @@ function showHearts2() {
     }, 4500);
     happy = happy + 1;
     
-    training = training - 1;
-    if (training < 0) {
+    training = training + 1;
+    if (training <= 0) {
       training = 0;
     }
     weight = weight -.25;
@@ -228,7 +228,7 @@ function showHearts2() {
       back();
     }, 3500);
     happy = happy - 1;
-    if (happy < 0) {
+    if (happy <= 0) {
       happy = 1;
     }
     training = training + 1;
