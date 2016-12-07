@@ -134,9 +134,14 @@ footer .copyright {
     display: none;
 }
 
-.background-image {
+#hearts-1 {
   position: absolute;
   z-index: 2;
-  left: 44%;
-  top: 58%;
+  top: 44%;
+}
+
+#hearts-2 {
+  position: absolute;
+  z-index: 2;
+  top: 64%;
 }
