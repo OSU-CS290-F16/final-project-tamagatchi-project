@@ -3,7 +3,7 @@ var http = require('http');
 var fs = require('fs');
 
 var staticDir = path.join(__dirname, 'public');
-var indexFilename = 'index.html';
+var indexFilename = 'Index.html';
 var notFoundFilename = '404.html';
 var port = process.env.PORT || 3000;
 
@@ -21,7 +21,7 @@ function onRequest(request, response){
             response.writeHead(200, {
                 "Content-Type": "text/html"
             });
-            fs.createReadStream("./public/index.html").pipe(response);
+            fs.createReadStream("./public/Index.html").pipe(response);
         }
         else if (!err) {
             var index = request.url.lastIndexOf('.');
