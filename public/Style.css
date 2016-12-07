@@ -72,6 +72,7 @@ footer .copyright {
   display: flex;
   position: relative;
   justify-content: center;
+  z-index: 1;
 }
 
 .background {
@@ -113,8 +114,6 @@ footer .copyright {
   padding-left: 2%;
 }
 
-
-
 .btn {
   opacity: 0.1;
   float: left;
@@ -133,4 +132,11 @@ footer .copyright {
 
 .hidden{
     display: none;
+}
+
+.background-image {
+  position: absolute;
+  z-index: 2;
+  left: 44%;
+  top: 58%;
 }
