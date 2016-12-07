@@ -29,12 +29,12 @@ function back(){
 }
 
 function hideButtons(){
-  document.getElementById('buttons0').classList.add('hidden');
   document.getElementById('buttons1').classList.add('hidden');
+  document.getElementById('buttons2').classList.add('hidden');
 }
 function showButtons(){
-  document.getElementById('buttons0').classList.remove('hidden');
   document.getElementById('buttons1').classList.remove('hidden');
+  document.getElementById('buttons2').classList.remove('hidden');
 }
 
 function hideHearts1() {
@@ -93,7 +93,7 @@ function showHearts2() {
        setTimeout(function(){
          image.src = "./Characters/Deutch/Age-1/Deutch-Age-1-Normal.gif";
          showButtons();
-       }, 6000);
+       }, 0);
 
      }
      else{
@@ -140,8 +140,6 @@ function showHearts2() {
 //}
 
 
-
-
   function eatFunc(){
     dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Eating.gif";
     image.src = dir;
@@ -152,8 +150,8 @@ function showHearts2() {
     if(hunger < 5) {
       hunger = hunger + 1;
       poo = poo + .25;
-      training = training +.25;
-      weight = weight + .5
+      training = training + 1;
+      weight = weight + .5;
     }
   }
 
@@ -178,9 +176,13 @@ function showHearts2() {
       back();
     }, 4500);
     happy = happy +.5;
-    training = training -.125;
+    training = training - 1;
     weight = weight -.25;
 
+  }
+
+  function connectFunc() {
+    //stuff
   }
 
   function goodFunc(){
@@ -220,7 +222,6 @@ function showHearts2() {
     }, 3500);
     happy = happy - 1;
     training = training + 1;
-
   }
 
   function attentionFunc(){
