@@ -44,7 +44,6 @@ function showButtons(){
 
      if(intro === true){
        intro = false;
-       hideButtons();
        age = age + 1;
        image.src = "./Characters/Deutch/Age-0/Deutch-Egg.gif";
 
@@ -59,7 +58,6 @@ function showButtons(){
      }
 
 };
-
 
 
   function statsFunc(){
@@ -134,10 +132,6 @@ function showButtons(){
     happy = happy +.5;
     training = training -.125;
     weight = weight -.25;
-
-  }
-
-  function connectFunc(){
 
   }
 
