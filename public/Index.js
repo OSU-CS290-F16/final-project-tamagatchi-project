@@ -126,7 +126,7 @@ function showButtons(){
   }
 
   function playFunc(){
-    dir0 = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Play.gif";
+    dir0 = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Playing.gif";
     image.src = dir0;
     setTimeout(function(){
       back();
@@ -165,9 +165,9 @@ function showButtons(){
     setTimeout(function(){
       back();
     }, 3500);
-    if(training < (age*age)){//if it sleeps for so long // set a time if time < '#'
-      age = age + 1;
-    }
+    // if(training < (age*age)){//if it sleeps for so long // set a time if time < '#'
+    //   age = age + 1;
+    // };
   }
 
   function badFunc(){
