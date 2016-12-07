@@ -1,6 +1,7 @@
 var path = require('path');
 var http = require('http');
 var fs = require('fs');
+var GifEncoder = require('gif-encoder');
 
 var staticDir = path.join(__dirname, 'public');
 var indexFilename = 'index.html';
