@@ -75,7 +75,7 @@ function showHearts2() {
   else if (happy == 3) {
     image3.src = "./Settings/Hearts-3.png";
   }
-  else if (happy == 4) {
+  else {
     image3.src = "./Settings/Hearts-4.png";
   }
   document.getElementById('hearts-2').classList.remove('hidden');
@@ -162,9 +162,9 @@ function showHearts2() {
       back();
     }, 3500);
     if(poo < 1){
-      happy = happy + 1;
+      happy = happy + .5;
       poo = 0;
-      training = training + 1;
+      training = training + .25;
       weight = weight - .25;
     }
   }
@@ -175,12 +175,8 @@ function showHearts2() {
     setTimeout(function(){
       back();
     }, 4500);
-    happy = happy + 1;
-    
+    happy = happy +.5;
     training = training - 1;
-    if (training < 0) {
-      training = 0;
-    }
     weight = weight -.25;
 
   }
@@ -225,9 +221,6 @@ function showHearts2() {
       back();
     }, 3500);
     happy = happy - 1;
-    if (happy < 0) {
-      happy = 1;
-    }
     training = training + 1;
   }
 
