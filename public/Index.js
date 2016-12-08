@@ -78,7 +78,7 @@ function showButtons(){
 };
 
 
-  function statsFunc(){
+  function statsFunc(){//breack up funtion for onclick hearts 
     hideButtons();
     image.src = "./Settings/Stats.png";
     showHearts('1');
