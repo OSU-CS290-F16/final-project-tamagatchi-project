@@ -234,6 +234,11 @@ function trainingFunc(){
 
   function attentionFunc(){
 //idk what to put here
+//if health < 1 -- alert user (by highlighting the area or a pop up box or something noticeable)
+//if happy < 1 -- alert user
+//if poo > 2 -- alert user
+//if sick -- alert user
+//when the user chooses a function that fixes the issue (ex. eating snack to raise hunger level), alert disappears.
   }
 
   function levelUp(){
