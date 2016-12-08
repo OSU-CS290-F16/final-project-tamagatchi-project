@@ -22,7 +22,24 @@ document.getElementById("sleep").addEventListener("click", sleepFunc);
 document.getElementById("bad").addEventListener("click", badFunc);
 document.getElementById("attention").addEventListener("click", attentionFunc);
 
-
+//////////////////////////////////////////////////////////////////
+ function hideHearts(set){
+   var element = "hearts-" + set;
+   document.getElementById(element).classList.add('hidden');
+ }
+function showHearts(set){
+  var object = "hearts-" + set;
+  heartImage = document.getElementById(object);
+  if(set == 1){
+    var path = "./Settings/Hearts/Hearts-" + hunger + ".png";
+  }
+  else{
+    var path = "./Settings/Hearts/Hearts-" + happy + ".png";
+  }
+  heartImage.src = path;
+  document.getElementById(object).classList.remove('hidden');
+}
+//////////////////////////////////////////////////////////////////
 function back(){
   dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-" + action + ".gif";
   image.src = dir;
@@ -37,52 +54,7 @@ function showButtons(){
   document.getElementById('buttons2').classList.remove('hidden');
 }
 
-function hideHearts1() {
-  document.getElementById('hearts-1').classList.add('hidden');
-}
 
-function showHearts1() {
-  image2 = document.getElementById('hearts-1');
-  
-  if (hunger == 1) {
-    image2.src = "./Settings/Hearts-1.png";
-  }
-  else if (hunger == 2) {
-    image2.src = "./Settings/Hearts-2.png";
-  }
-  else if (hunger == 3) {
-    image2.src = "./Settings/Hearts-3.png";
-  }
-  else {
-    image2.src = "./Settings/Hearts-4.png";
-  }
-  document.getElementById('hearts-1').classList.remove('hidden');
-}
-
-function hideHearts2() {
-  document.getElementById('hearts-2').classList.add('hidden');
-}
-
-function showHearts2() {
-  image3 = document.getElementById('hearts-2');
-  
-  if (happy == 1) {
-    image3.src = "./Settings/Hearts-1.png";
-  }
-  else if (happy == 2) {
-    image3.src = "./Settings/Hearts-2.png";
-  }
-  else if (happy == 3) {
-    image3.src = "./Settings/Hearts-3.png";
-  }
-  else if (happy == 4) {
-    image3.src = "./Settings/Hearts-4.png";
-  }
-  else {
-    image3.src = "./Settings/Hearts-1.png";
-  }
-  document.getElementById('hearts-2').classList.remove('hidden');
-}
 
  function screenClick() {
 
@@ -100,7 +72,7 @@ function showHearts2() {
 
      }
      else{
-        back();
+        // back();
      }
 
 };
@@ -109,13 +81,13 @@ function showHearts2() {
   function statsFunc(){
     hideButtons();
     image.src = "./Settings/Stats.png";
-    showHearts1();
-    showHearts2();
+    showHearts('1');
+    showHearts('2');
     //unhide hearts in hunger and happy places accordingly
     image.addEventListener("click", function(){
       hideButtons();
-      hideHearts1();
-      hideHearts2();
+      hideHearts('1');
+      hideHearts('2');
       dir = "./Settings/Training-" + training + ".png";
       image.src = dir;
       //hide hunger and happy hearts
@@ -179,7 +151,7 @@ function showHearts2() {
       back();
     }, 4500);
     happy = happy + 1;
-    
+
     training = training + 1;
     if (training <= 0) {
       training = 0;
