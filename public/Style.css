@@ -6,14 +6,12 @@ body {
 }
 
 .head {
-  margin: 0px;
-  text-align: center;
-  color: white;
+  justify-content: center;
 }
 
 header {
   padding: 5px 20px 0 5px;
-  background-color: green;
+  background-color: #8ec284;
 }
 
 header h1 {
@@ -72,11 +70,10 @@ footer .copyright {
   display: flex;
   position: relative;
   justify-content: center;
-  z-index: 1;
 }
 
 .background {
-  background-color: lightblue;
+  background-color: lightgrey;
 }
 
 .shell-image {
@@ -91,7 +88,7 @@ footer .copyright {
 
 .about-footer {
   position: absolute;
-  bottom: 0;
+  bottom: 1px;
   width: 100%;
 }
 
@@ -144,4 +141,9 @@ footer .copyright {
   position: absolute;
   z-index: 2;
   top: 64%;
+}
+#caseShell{
+  border-style: solid;
+  border-width: 5px;
+  z-index: -1;
 }
