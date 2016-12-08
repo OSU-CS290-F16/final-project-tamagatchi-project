@@ -28,8 +28,16 @@ document.getElementById("sick").addEventListener("click", sickFunc);
 document.getElementById("sleep").addEventListener("click", sleepFunc);
 document.getElementById("bad").addEventListener("click", badFunc);
 document.getElementById("attention").addEventListener("click", attentionFunc);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function GameClock(){
 
-//////////////////////////////////////////////////////////////////
+
+
+
+
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
  function hideHearts(set){
    var element = "hearts-" + set;
    document.getElementById(element).classList.add('hidden');
@@ -53,6 +61,9 @@ function back(){
   document.getElementById('Overlay-Shell-Back').classList.add('hidden');
   showButtons();
   document.getElementById('year').classList.add('hidden');
+  document.getElementById('petWeight').classList.add('hidden');
+  document.getElementById('petName').classList.add('hidden');
+  document.getElementById('petIcon').classList.add('hidden');
 }
 
 function hideButtons(){
@@ -113,6 +124,9 @@ function trainingFunc(){
       document.getElementById('Overlay-Shell-Age').classList.add('hidden');
       document.getElementById('Overlay-Shell-Back').classList.remove('hidden');
       document.getElementById('year').classList.remove('hidden');
+      document.getElementById('petWeight').classList.remove('hidden');
+      document.getElementById('petIcon').classList.remove('hidden');
+      document.getElementById('petName').classList.remove('hidden');
       hideButtons();
       backgroundShell = document.getElementById('caseShell');
       backgroundShell.src = "./Settings/Age-Weight-Name.png";
