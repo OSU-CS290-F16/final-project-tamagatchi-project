@@ -50,6 +50,7 @@ function showHearts(set){
 function back(){
   dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-" + action + ".gif";
   backgroundShell.src = dir;
+  document.getElementById('Overlay-Shell-Back').classList.add('hidden');
   showButtons();
 }
 
@@ -86,44 +87,34 @@ function showButtons(){
 
 ////////////////////////////////////////////////////////////////////////////
   function statsFunc(){//breack up funtion for onclick hearts
-    viewStats = 2;
+
     hideButtons();
     backgroundShell = document.getElementById('caseShell');
     backgroundShell.src = "./Settings/Stats.png";
     showHearts('1');
     showHearts('2');
-      //unhide hearts in hunger and happy places accordingly
-    //     $("#caseShell").on("click",function()
-    // {
-    //     _response = "ok!"
-    // }
-    ///////////////////////////////////////////////////
-    // backgroundShell.addEventListener("click", function {
-    //   trainingFunc();
-    // });
+    document.getElementById('Overlay-Shell-Training').classList.remove('hidden');
    }
   //
 function trainingFunc(){
+  document.getElementById('Overlay-Shell-Training').classList.add('hidden');
+    document.getElementById('Overlay-Shell-Age').classList.remove('hidden');
     backgroundShell = document.getElementById('caseShell');
     hideButtons();
     hideHearts('1');
     hideHearts('2');
     dir = "./Settings/Training/Training-" + training + ".png";
     backgroundShell.src = dir;
-    viewStats = 3;
+}
     //hide hunger and happy hearts
     // unhide boxes according to training
-    backgroundShell.addEventListener("click", function(){
+    function Age_Weight_NameFunc(){
+      document.getElementById('Overlay-Shell-Age').classList.add('hidden');
+      document.getElementById('Overlay-Shell-Back').classList.remove('hidden');
       hideButtons();
       backgroundShell = document.getElementById('caseShell');
       backgroundShell.src = "./Settings/Age-Weight-Name.png";
-      //hide boxes
-      //show age icon and swap src if age above 1
-      //unhide name
-      //unhide age and change if above 1
-      //unhide weight and change accordingly
-      backgroundShell.addEventListener("click", back);
-    });
+
 }
 ////////////////////////////////////////////////////////////////////////////
   //function timer(){
