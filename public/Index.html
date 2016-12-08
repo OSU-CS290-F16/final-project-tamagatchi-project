@@ -6,13 +6,15 @@
   </head>
   <body class="background">
     <header>
-
-      <h1 class= "head">Tamagotchi</h1>
-
+      <center>
+        <img class="error_img" src="Tamagotchi_Page_Title.png" alt="Tamagotchi_Website_Title" height ="50%" with="50%">
+      </center>
       <nav>
         <ul class="navbar-list">
           <li class="navbar-item"><a href="Index.html">Home</a></li>
           <li class="navbar-item"><a href="about.html">About</a></li>
+
+          <li id="Save" class="Save navbar-item navbar-item navbar-right"><a href="#">Save</a></li>
         </ul>
       </nav>
 
@@ -21,9 +23,10 @@
     <main>
 
       <div class="shell">
+
         <img src="./Settings/Click-Here-To-Begin.png"  id="caseShell">
-        <img src="./Settings/Hearts/Hearts-1.png" id="hearts-1" class="hidden">
-        <img src="./Settings/Hearts/Hearts-1.png" id="hearts-2" class="hidden">//onclick  goto training
+        <img onclick="trainingFunc()" src="./Settings/Hearts/Hearts-1.png" id="hearts-1" class="hidden">
+        <img onclick="trainingFunc()" src="./Settings/Hearts/Hearts-1.png" id="hearts-2" class="hidden">
 
           <div class="btn-group hidden" id="buttons1">
             <button type="button" class="btn" id="stats"></button>
