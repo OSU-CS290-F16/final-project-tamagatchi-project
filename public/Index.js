@@ -52,6 +52,7 @@ function back(){
   backgroundShell.src = dir;
   document.getElementById('Overlay-Shell-Back').classList.add('hidden');
   showButtons();
+  document.getElementById('year').classList.add('hidden');
 }
 
 function hideButtons(){
@@ -111,6 +112,7 @@ function trainingFunc(){
     function Age_Weight_NameFunc(){
       document.getElementById('Overlay-Shell-Age').classList.add('hidden');
       document.getElementById('Overlay-Shell-Back').classList.remove('hidden');
+      document.getElementById('year').classList.remove('hidden');
       hideButtons();
       backgroundShell = document.getElementById('caseShell');
       backgroundShell.src = "./Settings/Age-Weight-Name.png";
@@ -192,6 +194,7 @@ function trainingFunc(){
   }
 
   function sleepFunc(){
+    levelUp();
     dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Sleep.gif";
     backgroundShell.src = dir;
     setTimeout(function(){
@@ -217,6 +220,11 @@ function trainingFunc(){
 
   function attentionFunc(){
 //idk what to put here
+  }
+
+  function levelUp(){
+    dir = "./Settings/Year/Age-" + age + ".png"
+    document.getElementById('year').src = dir
   }
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
