@@ -98,8 +98,8 @@ function showButtons(){
        backgroundShell.src = "./Characters/Deutch/Age-0/Deutch-Egg.gif";
 
        setTimeout(function(){
-         backgroundShell.src = "./Characters/Deutch/Age-1/Deutch-Age-2-Normal.gif";
-         showButtons();
+         dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-" + action + ".gif";
+         backgroundShell.src = dir;
        }, 0);//replace 0 with 6000 when done debuging
 
      }
