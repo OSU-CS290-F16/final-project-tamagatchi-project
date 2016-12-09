@@ -110,7 +110,11 @@ function showButtons(){
 
 
  function screenClick() {
-
+  //  var temp=
+  //   if(localStorage.getItem("intro") !== NULL){
+  //     loadFunc();
+  //   }
+  //    else
      if(intro === true){
        intro = false;
        age = age + 1;
@@ -287,4 +291,20 @@ function trainingFunc(){
   function levelUp(){
     dir = "./Settings/Year/Age-" + age + ".png";
     document.getElementById('year').src = dir;
+  }
+
+  function saveFunc(){
+      localStorage.setItem("intro", intro);
+      localStorage.setItem("sick", sick);
+      localStorage.setItem("age", age);
+      localStorage.setItem("hunger", hunger);
+      localStorage.setItem("happy", happy);
+      localStorage.setItem("weight", weight);
+      localStorage.setItem("poo", poo);
+      localStorage.setItem("name", name);
+      localStorage.setItem("training", training);
+      localStorage.setItem("action", action);
+  }
+  function loadFunc(){
+    intro = localStorage.getItem("intro");
   }
