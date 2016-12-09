@@ -152,10 +152,7 @@ function trainingFunc(){
     //hide hunger and happy hearts
     // unhide boxes according to training
     function Age_Weight_NameFunc(){
-      // document.getElementById('Overlay-Shell-Age').classList.add('hidden');
       document.getElementById('Overlay-Shell-Back').classList.remove('hidden');
-      // document.getElementById('year').classList.remove('hidden');
-      // document.getElementById('petWeight').classList.remove('hidden');
       showStats();
       document.getElementById('petIcon').classList.remove('hidden');
       document.getElementById('petName').classList.remove('hidden');
@@ -240,9 +237,6 @@ function trainingFunc(){
     setTimeout(function(){
       back();
     }, 3500);
-    // if(training < (age*age)){//if it sleeps for so long // set a time if time < '#'
-    //   age = age + 1;
-    // };
   }
 
   function badFunc(){
