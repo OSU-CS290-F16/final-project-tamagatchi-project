@@ -11,7 +11,6 @@ var dir = '';
 var action = "Normal";
 backgroundShell = document.getElementById('caseShell');
 backgroundShellCover = document.getElementById('shellCover');
-//var Gender;
 
 ///////////////////////////////////////////////////////////////////////////
 var viewStats = 0;
@@ -31,12 +30,42 @@ document.getElementById("attention").addEventListener("click", attentionFunc);
 document.getElementById('weight-value').innerHTML = weight;
 document.getElementById('age-value').innerHTML = age;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
 function GameClock(){
 
 
 
 
 
+=======
+function GameClock(){ // shows time from 0-23 hrs
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+
+  if(s == 00) { //add to stats every 1 minute
+    hunger = hunger - 1;
+    if(hunger < 1){
+      hunger = 1;
+    }
+    if(happy < 5){
+      happy = happy + 1;
+      poo = poo + 1;
+    }
+    age = age + 1;
+    document.getElementById('weight-value').innerHTML = weight;
+    document.getElementById('age-value').innerHTML = age;
+  }
+ 
+  var t = setTimeout(GameClock, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+>>>>>>> origin/master
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -91,10 +120,14 @@ function showButtons(){
 
 
  function screenClick() {
+<<<<<<< HEAD
    var temp = localStorage.getItem("intro");
     // if( temp !== NULL){
     //   loadFunc();
     // }
+=======
+
+>>>>>>> origin/master
      if(intro === true){
        intro = false;
        age = age + 1;
@@ -135,10 +168,7 @@ function trainingFunc(){
     //hide hunger and happy hearts
     // unhide boxes according to training
     function Age_Weight_NameFunc(){
-      // document.getElementById('Overlay-Shell-Age').classList.add('hidden');
       document.getElementById('Overlay-Shell-Back').classList.remove('hidden');
-      // document.getElementById('year').classList.remove('hidden');
-      // document.getElementById('petWeight').classList.remove('hidden');
       showStats();
       document.getElementById('petIcon').classList.remove('hidden');
       document.getElementById('petName').classList.remove('hidden');
@@ -227,9 +257,6 @@ function trainingFunc(){
     setTimeout(function(){
       back();
     }, 3500);
-    // if(training < (age*age)){//if it sleeps for so long // set a time if time < '#'
-    //   age = age + 1;
-    // };
   }
 
   function badFunc(){
@@ -276,6 +303,7 @@ function trainingFunc(){
     dir = "./Settings/Year/Age-" + age + ".png";
     document.getElementById('year').src = dir;
   }
+<<<<<<< HEAD
 
   function saveFunc(){
       localStorage.setItem("intro", 'intro');
@@ -301,3 +329,5 @@ function trainingFunc(){
     training = localStorage.getItem("training");
     action = localStorage.getItem("action");
   }
+=======
+>>>>>>> origin/master
