@@ -29,13 +29,6 @@ document.getElementById('weight-value').innerHTML = weight;
 document.getElementById('age-value').innerHTML = age;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function GameClock(){
-
-
-
-
-
-
 function GameClock(){ // shows time from 0-23 hrs
   var today = new Date();
   var h = today.getHours();
@@ -119,7 +112,7 @@ function showButtons(){
 
  function screenClick() {
 
-     else if(intro === true){
+    if(intro === true){
        intro = false;
        age = age + 1;
        backgroundShell.src = "./Characters/Deutch/Age-0/Deutch-Egg.gif";
@@ -127,7 +120,7 @@ function showButtons(){
        setTimeout(function(){
          dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-" + action + ".gif";
          backgroundShell.src = dir;
-       }, 0);//replace 0 with 6000 when done debuging
+       }, 6000);//replace 0 with 6000 when done debuging
 
      }
 
