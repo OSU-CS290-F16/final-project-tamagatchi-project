@@ -1,7 +1,7 @@
 {
-  "name": "assignment-3",
+  "name": "Final Project Tamagotchi",
   "version": "1.0.0",
-  "description": "A simple statically-served site.",
+  "description": "Thid id a Final Project for CS 290",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -14,8 +14,8 @@
   "author": "",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/OSU-CS290-F16/master-assignment-3/issues"
+    "url": "https://github.com/OSU-CS290-F16/final-project-tamagatchi-project/issues"
   },
-  "homepage": "https://github.com/OSU-CS290-F16/master-assignment-3#readme",
+  "homepage": "hhttps://github.com/OSU-CS290-F16/final-project-tamagatchi-project/blob/master/README.txt",
   "dependencies": {}
 }
