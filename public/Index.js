@@ -11,7 +11,6 @@ var dir = '';
 var action = "Normal";
 backgroundShell = document.getElementById('caseShell');
 backgroundShellCover = document.getElementById('shellCover');
-//var Gender;
 
 ///////////////////////////////////////////////////////////////////////////
 var viewStats = 0;
@@ -41,14 +40,16 @@ function GameClock(){ // shows time from 0-23 hrs
 
   if(s == 00) { //add to stats every 1 minute
     hunger = hunger - 1;
-    if(hunger <= 1){
-      hunger = 0;
+    if(hunger < 1){
+      hunger = 1;
     }
     if(happy < 5){
       happy = happy + 1;
       poo = poo + 1;
     }
-    age = age + 0.25;
+    age = age + 1;
+    document.getElementById('weight-value').innerHTML = weight;
+    document.getElementById('age-value').innerHTML = age;
   }
  
   var t = setTimeout(GameClock, 500);
@@ -110,11 +111,7 @@ function showButtons(){
 
 
  function screenClick() {
-  //  var temp=
-  //   if(localStorage.getItem("intro") !== NULL){
-  //     loadFunc();
-  //   }
-  //    else
+
      if(intro === true){
        intro = false;
        age = age + 1;
@@ -291,20 +288,4 @@ function trainingFunc(){
   function levelUp(){
     dir = "./Settings/Year/Age-" + age + ".png";
     document.getElementById('year').src = dir;
-  }
-
-  function saveFunc(){
-      localStorage.setItem("intro", intro);
-      localStorage.setItem("sick", sick);
-      localStorage.setItem("age", age);
-      localStorage.setItem("hunger", hunger);
-      localStorage.setItem("happy", happy);
-      localStorage.setItem("weight", weight);
-      localStorage.setItem("poo", poo);
-      localStorage.setItem("name", name);
-      localStorage.setItem("training", training);
-      localStorage.setItem("action", action);
-  }
-  function loadFunc(){
-    intro = localStorage.getItem("intro");
   }
