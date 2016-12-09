@@ -28,6 +28,8 @@ document.getElementById("sick").addEventListener("click", sickFunc);
 document.getElementById("sleep").addEventListener("click", sleepFunc);
 document.getElementById("bad").addEventListener("click", badFunc);
 document.getElementById("attention").addEventListener("click", attentionFunc);
+document.getElementById('weight-value').innerHTML = weight;
+document.getElementById('age-value').innerHTML = age;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function GameClock(){
 
@@ -39,9 +41,10 @@ function GameClock(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
  function hideHearts(set){
-   var element = "hearts-" + set;
-   document.getElementById(element).classList.add('hidden');
+  document.getElementById('hearts-1').classList.add('hidden');
+  document.getElementById('hearts-2').classList.add('hidden');
  }
+
 function showHearts(set){
   var object = "hearts-" + set;
   heartImage = document.getElementById(object);
@@ -54,14 +57,24 @@ function showHearts(set){
   heartImage.src = path;
   document.getElementById(object).classList.remove('hidden');
 }
+
+function showStats() {
+  document.getElementById('age-overlay').classList.remove('hidden');
+  document.getElementById('weight-overlay').classList.remove('hidden');
+}
+
+function hideStats() {
+  document.getElementById('age-overlay').classList.add('hidden');
+  document.getElementById('weight-overlay').classList.add('hidden');
+}
+
 //////////////////////////////////////////////////////////////////
 function back(){
   dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-" + action + ".gif";
   backgroundShell.src = dir;
   document.getElementById('Overlay-Shell-Back').classList.add('hidden');
   showButtons();
-  document.getElementById('year').classList.add('hidden');
-  document.getElementById('petWeight').classList.add('hidden');
+  hideStats();
   document.getElementById('petName').classList.add('hidden');
   document.getElementById('petIcon').classList.add('hidden');
 }
@@ -99,7 +112,6 @@ function showButtons(){
 
 ////////////////////////////////////////////////////////////////////////////
   function statsFunc(){//break up funtion for onclick hearts
-
     hideButtons();
     backgroundShell = document.getElementById('caseShell');
     backgroundShell.src = "./Settings/Stats.png";
@@ -107,24 +119,24 @@ function showButtons(){
     showHearts('2');
     document.getElementById('Overlay-Shell-Training').classList.remove('hidden');
    }
-  //
+
 function trainingFunc(){
-  document.getElementById('Overlay-Shell-Training').classList.add('hidden');
+    document.getElementById('Overlay-Shell-Training').classList.add('hidden');
     document.getElementById('Overlay-Shell-Age').classList.remove('hidden');
     backgroundShell = document.getElementById('caseShell');
     hideButtons();
-    hideHearts('1');
-    hideHearts('2');
+    hideHearts();
     dir = "./Settings/Training/Training-" + training + ".png";
     backgroundShell.src = dir;
 }
     //hide hunger and happy hearts
     // unhide boxes according to training
     function Age_Weight_NameFunc(){
-      document.getElementById('Overlay-Shell-Age').classList.add('hidden');
+      // document.getElementById('Overlay-Shell-Age').classList.add('hidden');
       document.getElementById('Overlay-Shell-Back').classList.remove('hidden');
-      document.getElementById('year').classList.remove('hidden');
-      document.getElementById('petWeight').classList.remove('hidden');
+      // document.getElementById('year').classList.remove('hidden');
+      // document.getElementById('petWeight').classList.remove('hidden');
+      showStats();
       document.getElementById('petIcon').classList.remove('hidden');
       document.getElementById('petName').classList.remove('hidden');
       hideButtons();
@@ -176,15 +188,12 @@ function trainingFunc(){
     happy = happy + 1;
 
     training = training + 1;
-    if (training <= 0) {
-      training = 0;
-    }
     weight = weight -.25;
 
   }
 
   function connectFunc() {
-    dir = "./Settings/Connected.png" ;
+    dir = "./Settings/connected.png" ;
     hideButtons();
     backgroundShell.src = dir;
     backgroundShell.addEventListener("click", back);
@@ -261,6 +270,6 @@ function trainingFunc(){
   }
 
   function levelUp(){
-    dir = "./Settings/Year/Age-" + age + ".png"
-    document.getElementById('year').src = dir
+    dir = "./Settings/Year/Age-" + age + ".png";
+    document.getElementById('year').src = dir;
   }
