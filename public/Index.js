@@ -234,7 +234,25 @@ function trainingFunc(){
   }
 
   function attentionFunc(){
-//idk what to put here
+    hideButtons();
+    if(sick ===true){
+        backgroundShell.src = "./Settings/Attention/Attention-Sick.png";
+    }
+    else if(happy <= 2){
+        backgroundShell.src = "./Settings/Attention/Attention-Unhappy.png";
+    }
+    else if(hunger <= 2){
+        backgroundShell.src = "./Settings/Attention/Attention-Hungry.png";
+    }
+    else if(poo >= 2){
+        backgroundShell.src = "./Settings/Attention/Attention-Dirty.png";
+    }
+    else if(training >= 6){
+        backgroundShell.src = "./Settings/Attention/Attention-Tired.png";
+    }
+    else{
+        backgroundShell.src = "./Settings/Attention/Attention-Normal.png";
+    }
 //if health < 1 -- alert user (by highlighting the area or a pop up box or something noticeable)
 //if happy < 1 -- alert user
 //if poo > 2 -- alert user
@@ -246,4 +264,3 @@ function trainingFunc(){
     dir = "./Settings/Year/Age-" + age + ".png"
     document.getElementById('year').src = dir
   }
-
