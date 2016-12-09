@@ -30,8 +30,7 @@ document.getElementById("attention").addEventListener("click", attentionFunc);
 document.getElementById('weight-value').innerHTML = weight;
 document.getElementById('age-value').innerHTML = age;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-function GameClock(){ // shows time from 0-23 hrs
+function GameClock() { // shows time from 0-23 hrs
   var today = new Date();
   var h = today.getHours();
   var m = today.getMinutes();
@@ -41,7 +40,7 @@ function GameClock(){ // shows time from 0-23 hrs
 
   if(s == 00) { //add to stats every 1 minute
     hunger = hunger - 1;
-    if(hunger < 1){
+    if(hunger <= 1){
       hunger = 1;
     }
     if(happy < 5){
@@ -112,14 +111,7 @@ function showButtons(){
 
 
  function screenClick() {
-<<<<<<< HEAD
-   var temp = localStorage.getItem("intro");
-    // if( temp !== NULL){
-    //   loadFunc();
-    // }
-=======
 
->>>>>>> origin/master
      if(intro === true){
        intro = false;
        age = age + 1;
@@ -128,7 +120,7 @@ function showButtons(){
        setTimeout(function(){
          dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-" + action + ".gif";
          backgroundShell.src = dir;
-       }, 0);//replace 0 with 6000 when done debuging
+       }, 6000);//replace 0 with 6000 when done debuging
 
      }
 
@@ -167,13 +159,9 @@ function trainingFunc(){
       hideButtons();
       backgroundShell = document.getElementById('caseShell');
       backgroundShell.src = "./Settings/Age-Weight-Name.png";
-
+      back();
 }
 ////////////////////////////////////////////////////////////////////////////
-  //function timer(){
-    //hunger = hunger - 1;
-//}
-
 
   function eatFunc(){
     dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Eating.gif";
@@ -295,31 +283,3 @@ function trainingFunc(){
     dir = "./Settings/Year/Age-" + age + ".png";
     document.getElementById('year').src = dir;
   }
-<<<<<<< HEAD
-
-  function saveFunc(){
-      localStorage.setItem("intro", 'intro');
-      localStorage.setItem("sick", sick);
-      localStorage.setItem("age", age);
-      localStorage.setItem("hunger", hunger);
-      localStorage.setItem("happy", happy);
-      localStorage.setItem("weight", weight);
-      localStorage.setItem("poo", poo);
-      localStorage.setItem("name", name);
-      localStorage.setItem("training", training);
-      localStorage.setItem("action", action);
-  }
-  function loadFunc(){
-    intro = localStorage.getItem("intro");
-    sick = localStorage.getItem("sick");
-    age = localStorage.getItem("age");
-    hunger = localStorage.getItem("hunger");
-    happy = localStorage.getItem("happy");
-    weight = localStorage.getItem("weight");
-    poo = localStorage.getItem("poo");
-    name = localStorage.getItem("name");
-    training = localStorage.getItem("training");
-    action = localStorage.getItem("action");
-  }
-=======
->>>>>>> origin/master
