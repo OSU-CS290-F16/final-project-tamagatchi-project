@@ -290,6 +290,7 @@ function saveFunc(){
     localStorage.setItem("name", name);
     localStorage.setItem("training", training);
     localStorage.setItem("action", action);
+    backgroundShell.src = "./Settings/Saved.png";
 }
 function loadFunc(){
   intro = localStorage.getItem("intro");
@@ -302,4 +303,5 @@ function loadFunc(){
   name = localStorage.getItem("name");
   training = localStorage.getItem("training");
   action = localStorage.getItem("action");
+  backgroundShell.src = "./Settings/Loaded.png";
 }
