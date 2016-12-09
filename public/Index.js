@@ -30,14 +30,7 @@ document.getElementById("attention").addEventListener("click", attentionFunc);
 document.getElementById('weight-value').innerHTML = weight;
 document.getElementById('age-value').innerHTML = age;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
-function GameClock(){
 
-
-
-
-
-=======
 function GameClock(){ // shows time from 0-23 hrs
   var today = new Date();
   var h = today.getHours();
@@ -65,7 +58,6 @@ function GameClock(){ // shows time from 0-23 hrs
 function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
->>>>>>> origin/master
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
