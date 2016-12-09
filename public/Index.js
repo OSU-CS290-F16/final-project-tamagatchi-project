@@ -31,31 +31,12 @@ document.getElementById("attention").addEventListener("click", attentionFunc);
 document.getElementById('weight-value').innerHTML = weight;
 document.getElementById('age-value').innerHTML = age;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function GameClock(){ // shows time from 0-23 hrs
-  var today = new Date();
-  var h = today.getHours();
-  var m = today.getMinutes();
-  var s = today.getSeconds();
-  m = checkTime(m);
-  s = checkTime(s);
+function GameClock(){
 
-  if(s == 00) { //add to stats every 1 minute
-    hunger = hunger - 1;
-    if(hunger <= 1){
-      hunger = 0;
-    }
-    if(happy < 5){
-      happy = happy + 1;
-      poo = poo + 1;
-    }
-    age = age + 0.25;
-  }
- 
-  var t = setTimeout(GameClock, 500);
-}
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
+
+
+
+
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -110,11 +91,10 @@ function showButtons(){
 
 
  function screenClick() {
-  //  var temp=
-  //   if(localStorage.getItem("intro") !== NULL){
-  //     loadFunc();
-  //   }
-  //    else
+   var temp = localStorage.getItem("intro");
+    // if( temp !== NULL){
+    //   loadFunc();
+    // }
      if(intro === true){
        intro = false;
        age = age + 1;
@@ -168,6 +148,10 @@ function trainingFunc(){
 
 }
 ////////////////////////////////////////////////////////////////////////////
+  //function timer(){
+    //hunger = hunger - 1;
+//}
+
 
   function eatFunc(){
     dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Eating.gif";
@@ -294,7 +278,7 @@ function trainingFunc(){
   }
 
   function saveFunc(){
-      localStorage.setItem("intro", intro);
+      localStorage.setItem("intro", 'intro');
       localStorage.setItem("sick", sick);
       localStorage.setItem("age", age);
       localStorage.setItem("hunger", hunger);
@@ -307,4 +291,13 @@ function trainingFunc(){
   }
   function loadFunc(){
     intro = localStorage.getItem("intro");
+    sick = localStorage.getItem("sick");
+    age = localStorage.getItem("age");
+    hunger = localStorage.getItem("hunger");
+    happy = localStorage.getItem("happy");
+    weight = localStorage.getItem("weight");
+    poo = localStorage.getItem("poo");
+    name = localStorage.getItem("name");
+    training = localStorage.getItem("training");
+    action = localStorage.getItem("action");
   }
