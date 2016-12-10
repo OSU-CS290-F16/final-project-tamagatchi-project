@@ -46,7 +46,7 @@ function GameClock(){ // shows time from 0-23 hrs
       happy = happy + 1;
       poo = poo + 1;
     }
-    age = age + 1;
+//     age = age + 1;
     document.getElementById('weight-value').innerHTML = weight;
     document.getElementById('age-value').innerHTML = age;
   }
