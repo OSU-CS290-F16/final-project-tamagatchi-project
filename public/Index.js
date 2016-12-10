@@ -27,6 +27,7 @@ document.getElementById("bad").addEventListener("click", badFunc);
 document.getElementById("attention").addEventListener("click", attentionFunc);
 document.getElementById('weight-value').innerHTML = weight;
 document.getElementById('age-value').innerHTML = age;
+document.getElementById('name-value').innerHTML = name;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function GameClock(){ // shows time from 0-23 hrs
@@ -46,7 +47,6 @@ function GameClock(){ // shows time from 0-23 hrs
       happy = happy + 1;
       poo = poo + 1;
     }
-//     age = age + 1;
     document.getElementById('weight-value').innerHTML = weight;
     document.getElementById('age-value').innerHTML = age;
   }
@@ -81,11 +81,13 @@ function showHearts(set){
 function showStats() {
   document.getElementById('age-overlay').classList.remove('hidden');
   document.getElementById('weight-overlay').classList.remove('hidden');
+  document.getElementById('name-overlay').classList.remove('hidden');
 }
 
 function hideStats() {
   document.getElementById('age-overlay').classList.add('hidden');
   document.getElementById('weight-overlay').classList.add('hidden');
+  document.getElementById('name-overlay').classList.add('hidden');
 }
 
 //////////////////////////////////////////////////////////////////
@@ -93,10 +95,9 @@ function back(){
   dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-" + action + ".gif";
   backgroundShell.src = dir;
   document.getElementById('Overlay-Shell-Back').classList.add('hidden');
+  document.getElementById('Overlay-Shell-Age').classList.add('hidden');
   showButtons();
   hideStats();
-  document.getElementById('petName').classList.add('hidden');
-  document.getElementById('petIcon').classList.add('hidden');
 }
 
 function hideButtons(){
@@ -115,6 +116,7 @@ function showButtons(){
     if(intro === true){
        intro = false;
        age = age + 1;
+       document.getElementById('age-value').innerHTML = age;
        backgroundShell.src = "./Characters/Deutch/Age-0/Deutch-Egg.gif";
 
        setTimeout(function(){
@@ -153,8 +155,6 @@ function trainingFunc(){
 function Age_Weight_NameFunc(){
     document.getElementById('Overlay-Shell-Back').classList.remove('hidden');
     showStats();
-    document.getElementById('petIcon').classList.remove('hidden');
-    document.getElementById('petName').classList.remove('hidden');
     hideButtons();
     backgroundShell = document.getElementById('caseShell');
     backgroundShell.src = "./Settings/Age-Weight-Name.png";
@@ -173,6 +173,7 @@ function eatFunc(){
     poo = poo + .25;
     training = training + 1;
     weight = weight + .5;
+    document.getElementById('weight-value').innerHTML = weight;
   }
 }
 
@@ -188,6 +189,7 @@ function pooFunc(){
     poo = 0;
     training = training + 1;
     weight = weight - .25;
+    document.getElementById('weight-value').innerHTML = weight;
   }
 }
 
@@ -201,6 +203,7 @@ function playFunc(){
 
   training = training + 1;
   weight = weight -.25;
+  document.getElementById('weight-value').innerHTML = weight;
 }
 
 function connectFunc() {
@@ -229,9 +232,10 @@ function sickFunc(){
 }
 
 function sleepFunc(){
-  levelUp();
   dir = "./Characters/" + name + "/Age-" + age + "/" + name + "-Age-" + age + "-Sleep.gif";
   backgroundShell.src = dir;
+  age = age + 1;
+  document.getElementById('age-value').innerHTML = age;
   setTimeout(function(){
     back();
   }, 3500);
@@ -273,12 +277,6 @@ function attentionFunc(){
 
   }
 
-function levelUp(){
-  dir = "./Settings/Year/Age-" + age + ".png";
-    document.getElementById('year').src = dir;
-}
-
-
 function saveFunc(){
     localStorage.setItem("intro", 'intro');
     localStorage.setItem("sick", sick);
@@ -290,7 +288,6 @@ function saveFunc(){
     localStorage.setItem("name", name);
     localStorage.setItem("training", training);
     localStorage.setItem("action", action);
-    hideButtons();
     backgroundShell.src = "./Settings/Saved.png";
 }
 function loadFunc(){
@@ -304,6 +301,5 @@ function loadFunc(){
   name = localStorage.getItem("name");
   training = localStorage.getItem("training");
   action = localStorage.getItem("action");
-  hideButtons();
   backgroundShell.src = "./Settings/Loaded.png";
 }
