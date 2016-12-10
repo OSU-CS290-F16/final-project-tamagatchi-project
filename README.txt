@@ -6,3 +6,6 @@ check the hunger, happiness, training and age levels. Over time, your pet will g
 your pet's appearenes will change based on age. Make sure to take great care of your pet!
 
 Created by Nick Bradford, Joshua Lioy, Anisha McLoud
+
+
+Notes: The pet's maximum life span is 4 years.  After 4 years, there are a couple bugs that may occur.
